@@ -1,0 +1,324 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Swiggy</title>
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN"
+      crossorigin="anonymous"
+    />
+    <link rel="stylesheet" href="./style.css" />
+    <link
+      href="https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css"
+      rel="stylesheet"
+    />
+  </head>
+  <body>
+    <header>
+      <!-- As a heading -->
+      <nav class="navbar navbar-expand-lg bg-body-tertiary">
+        <div class="container">
+          <div class="container-fluid w-full">
+            <div class="d-flex w-full">
+              <div class="" style="width: 20%">
+                <span class="navbar-brand mb-0 h1">
+                  <img
+                    class="brand-logo"
+                    src="https://cdn.worldvectorlogo.com/logos/swiggy-1.svg"
+                  />
+                </span>
+              </div>
+              <div style="width: 20%"></div>
+              <div
+                style="width: 60%"
+                class="d-flex align-items-center justify-content-end"
+                id="navbarNav"
+              >
+                <ul class="navbar-nav">
+                  <li class="nav-item">
+                    <a
+                      class="nav-link d-flex align-items-center active"
+                      aria-current="page"
+                      href="#"
+                    >
+                      <i class="bx bx-search mx-3"></i>
+                      Search</a
+                    >
+                  </li>
+                  <li class="nav-item">
+                    <a
+                      class="nav-link d-flex align-items-center active"
+                      aria-current="page"
+                      href="#"
+                    >
+                      <i class="bx bxs-offer mx-3"></i>
+                      Offers</a
+                    >
+                  </li>
+                  <li class="nav-item">
+                    <a
+                      class="nav-link d-flex align-items-center active"
+                      aria-current="page"
+                      href="#"
+                    >
+                      <i class="bx bx-help-circle mx-3"></i>
+                      Help</a
+                    >
+                  </li>
+
+                  <li class="nav-item">
+                    <a
+                      class="nav-link d-flex align-items-center active"
+                      aria-current="page"
+                      href="./foods.html"
+                    >
+                      <i class="bx bx-user mx-3"></i>
+                      Menu</a
+                    >
+                  </li>
+
+                  <li class="nav-item">
+                    <a
+                      class="nav-link d-flex align-items-center active"
+                      aria-current="page"
+                      href="#"
+                    >
+                      <i class="bx bx-cart-alt mx-3"></i>
+                      Cart</a
+                    >
+                  </li>
+                  <li class="nav-item">
+                    <a
+                      class="nav-link d-flex align-items-center active"
+                      aria-current="page"
+                      href="./login.html"
+                    >
+                      <i class="bx bxs-user-circle mx-3"></i>
+                      Login</a
+                    >
+                  </li>
+                </ul>
+              </div>
+            </div>
+          </div>
+        </div>
+      </nav>
+    </header>
+
+    <section class="page">
+      <!-- URGENCY TIMER SECTION -->
+      <div
+        class="alert alert-primary my-3 alert-dismissible fade show"
+        role="alert"
+      >
+        <div class="row align-items-center">
+          <div class="col">
+            <h4>Grab the offer. Hurry up!]]</h4>
+          </div>
+          <div class="col">
+            <div class="row align-items-center">
+              <div class="col-8">
+                <div
+                  class="row text-center timer"
+                  id="dhool-deals-timer-container"
+                >
+                  <div
+                    class="col d-flex flex-column justify-content-center"
+                    id="days"
+                  >
+                    <h4>00</h4>
+                    <p>Days</p>
+                  </div>
+                  <div
+                    class="col d-flex flex-column justify-content-center"
+                    id="hrs"
+                  >
+                    <h4>00</h4>
+                    <p>Hrs</p>
+                  </div>
+                  <div
+                    class="col d-flex flex-column justify-content-center"
+                    id="mins"
+                  >
+                    <h4>00</h4>
+                    <p>Mins</p>
+                  </div>
+                  <div
+                    class="col d-flex flex-column justify-content-center"
+                    id="secs"
+                  >
+                    <h4>00</h4>
+                    <p>Secs</p>
+                  </div>
+                </div>
+              </div>
+              <div class="col d-flex justify-content-center">
+                <button type="button" class="btn btn-primary" id="avail">
+                  Shop Now
+                </button>
+              </div>
+            </div>
+          </div>
+          <button
+            type="button"
+            class="btn-close"
+            data-bs-dismiss="alert"
+            aria-label="Close"
+          ></button>
+        </div>
+      </div>
+      <!-- OFFERS SECTION -->
+      <div class="sliding-section my-5">
+        <div class="d-flex mb-2 justify-content-between">
+          <div><h4>Best Offers for you</h4></div>
+          <div class="d-flex">
+            <button
+              type="button"
+              class="btn slider-btn d-flex align-items-center justify-content-center me-3"
+            >
+              <i class="bx bx-left-arrow-alt"></i>
+            </button>
+            <button
+              type="button"
+              class="btn slider-btn d-flex align-items-center justify-content-center"
+            >
+              <i class="bx bx-right-arrow-alt"></i>
+            </button>
+          </div>
+        </div>
+        <div
+          class="d-flex offer-slider overflow-x-scroll column-gap-3"
+          id="offers-slider"
+        ></div>
+      </div>
+      <div
+        class="alert alert-danger my-3 alert-dismissible fade show"
+        role="alert"
+      >
+        <div class="row align-items-center">
+          <div class="col">
+            <h4>End Of Year Sale. Hurry up!</h4>
+          </div>
+          <div class="col">
+            <div class="row align-items-center">
+              <div class="col-8">
+                <div
+                  class="row text-center timer"
+                  id="eoys-deals-timer-container"
+                >
+                  <div
+                    class="col d-flex flex-column justify-content-center"
+                    id="days"
+                  >
+                    <h4>00</h4>
+                    <p>Days</p>
+                  </div>
+                  <div
+                    class="col d-flex flex-column justify-content-center"
+                    id="hrs"
+                  >
+                    <h4>00</h4>
+                    <p>Hrs</p>
+                  </div>
+                  <div
+                    class="col d-flex flex-column justify-content-center"
+                    id="mins"
+                  >
+                    <h4>00</h4>
+                    <p>Mins</p>
+                  </div>
+                  <div
+                    class="col d-flex flex-column justify-content-center"
+                    id="secs"
+                  >
+                    <h4>00</h4>
+                    <p>Secs</p>
+                  </div>
+                </div>
+              </div>
+              <div class="col d-flex justify-content-center">
+                <button type="button" class="btn btn-primary" id="avail">
+                  Shop Now
+                </button>
+              </div>
+            </div>
+          </div>
+          <button
+            type="button"
+            class="btn-close"
+            data-bs-dismiss="alert"
+            aria-label="Close"
+          ></button>
+        </div>
+      </div>
+      <!-- CATEGORIES SECTION -->
+      <div class="sliding-section my-5">
+        <div class="d-flex mb-2 justify-content-between">
+          <div><h4>What's on your mind?</h4></div>
+          <div class="d-flex">
+            <button
+              type="button"
+              class="btn slider-btn d-flex align-items-center justify-content-center me-3"
+            >
+              <i class="bx bx-left-arrow-alt"></i>
+            </button>
+            <button
+              type="button"
+              class="btn slider-btn d-flex align-items-center justify-content-center"
+            >
+              <i class="bx bx-right-arrow-alt"></i>
+            </button>
+          </div>
+        </div>
+        <div
+          class="d-flex offer-slider overflow-x-scroll column-gap-3"
+          id="categories-slider"
+        ></div>
+      </div>
+      <div class="divider"></div>
+      <!-- RESTAURANT SECTION -->
+      <div class="sliding-section my-5">
+        <div class="d-flex mb-2 justify-content-between">
+          <div><h4>Top Restaurants Chains in your area</h4></div>
+          <div class="d-flex">
+            <button
+              type="button"
+              class="btn slider-btn d-flex align-items-center justify-content-center me-3"
+            >
+              <i class="bx bx-left-arrow-alt"></i>
+            </button>
+            <button
+              type="button"
+              class="btn slider-btn d-flex align-items-center justify-content-center"
+            >
+              <i class="bx bx-right-arrow-alt"></i>
+            </button>
+          </div>
+        </div>
+        <div
+          class="d-flex restaurants-slider overflow-x-scroll column-gap-3"
+          id="restaurants-slider"
+        ></div>
+      </div>
+      <div class="divider"></div>
+      <!-- FEATURED MENU TODAY -->
+      <div class="featured-menu-section my-5">
+        <h4 class="mb-2">Featured Menu Items</h4>
+        <div class="menu-items">
+          <div class="row" id="food-menu-container"></div>
+        </div>
+      </div>
+    </section>
+    <script
+      src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"
+      integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL"
+      crossorigin="anonymous"
+    ></script>
+    <script src="https://unpkg.com/boxicons@2.1.4/dist/boxicons.js"></script>
+    <script src="./script.js"></script>
+    <script src="./timer.js"></script>
+  </body>
+</html>
